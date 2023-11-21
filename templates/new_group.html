@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block title %}
+Group Contacts
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="container">
+  <div class="row">
+    <div class="n_group mt-10 p-5">
+      <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto d-grid gap-2 d-md-flex justify-content-md-end">
+          <a href="{{url_for('groups')}}"><button class="btn btn-primary" type="button">Back</button></a>
+      </div>
+  </div>
+    <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto lead">
+
+      <h3 class="pt-5 pb-2">New group </h3>
+      <hr/>
+
+      {{ render_form(form) }}
+
+    <span class="text-success lead">{{ message }}</span>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block title %}
+Contacts
+{% endblock %}
+
+
+{% block content %}
+
+<!--
+	TIPS about using Bootstrap-Flask:
+	https://github.com/helloflask/bootstrap-flask
+	https://bootstrap-flask.readthedocs.io/
+-->
+
+<div class="container">
+    <div class="contact mt-10 p-5">
+        <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="{{url_for('contacts')}}"><button class="btn btn-primary" type="button">Back</button></a>
+        </div>
+    </div>
+
+    <h3 class="pt-5 pb-2 text-center">Edit contact </h3>
+    <hr/>
+
+    <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto lead">
+
+      {{ render_form(form) }}
+
+    <span class="text-success lead">{{ message }}</span>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
