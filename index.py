@@ -13,7 +13,7 @@ app.secret_key = secrets.token_hex(16)
 bootstrap = Bootstrap5(app)
 csrf = CSRFProtect(app)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:12345@localhost/crud_flask"
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://localhost credentials"
 db = SQLAlchemy(app)
 
 class Groups(db.Model):
